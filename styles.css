@@ -1,0 +1,570 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vegetable-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-left: 200px;
+    height: 120px;
+}
+
+.bottom-container {
+    display: flex;
+    width: 100%;
+}
+
+.left-container,
+.right-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
+
+.unlock-button {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.status {
+    color: black;
+    margin-top: 10px;
+    background-color: yellow;
+}
+
+.left-container {
+    background-color: greenyellow;
+    width: 50px;
+    pointer-events: none;
+}
+
+.middle-container {
+    display: flex;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 620px;
+    justify-content: center;
+    margin-top: 1px;
+    margin-left: 30px;
+    pointer-events:none;
+}
+
+.status,
+.crops {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    font-size: 20px;
+    justify-content: left;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #555;
+}
+
+.buy-worker-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.energy-upgrade-button {
+    background-color: #FFA500;
+    color: white;
+}
+
+.energy-reduction-button {
+    background-color: #800080;
+    color: white;
+}
+
+.rest-button {
+    background-color: #008CBA;
+    color: white;
+}
+
+.money-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.vegetable-buttons button {
+    background-color: #8bc34a;
+    color: white;
+}
+
+.crops {
+    justify-content: center;
+}
+
+.vegetable-buttons button.sell {
+    background-color: #f44336;
+}
+
+.money-display {
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+    display: flex;
+    grid-row: 2;
+}
+
+button {
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url(FarmBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#moneyDisplay,
+#energyDisplay {
+    font-size: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#energyDisplay {
+    grid-row: 1;
+}
+
+#status {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#vegetableButtons button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button.sell {
+    margin-left: 20px;
+}
+
+#energyUpgradeButton,
+#workerUpgradeButton,
+#energyReductionButton,
+.rest-button {
+    display: block;
+    margin: 10px 0;
+    width: 400px;
+    height: 80px;
+    font-size: 25px;
+}
+
+#Header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin: 0px;
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+}
+
+.buff-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:gray;
+    border: black solid;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1001;
+    display: none;
+    height: 90%;
+    width: 90%;
+}
+
+.buff-menu-button {
+    position: absolute;
+    bottom: 0.1px;
+    left: 200px;
+    border: none;
+    cursor: pointer;
+    background-color:aqua;
+    border-radius: 20%;
+    height: 50px;
+    width: 100px;
+    border: black solid;
+    color: black;
+    font-size:30px;
+}
+
+.skill-tree-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-image: url(SkillTree.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    height: 125px;
+    width: 125px;
+    border: black solid;
+    color: black;
+    font-size:30px;
+}
+
+.skill-tree-button:hover {
+    background-color: #45a049;
+    color: black;
+    transform: scale(1.05);
+    filter: brightness(80%);
+}
+
+.skill-tree-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(SkillTreeBackground.png);
+    background-size: cover;
+    border: black solid;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1001;
+    display: none;
+    height: 90%;
+    width: 90%;
+}
+
+.skill-button {
+    margin: 5px;
+    padding: 5px;
+    border: black solid;
+    background-color: #f0f0f0;
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    font-size: 15px;
+}
+
+.skill-button span {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.skill-button:hover {
+    background-color: #ddd;
+    color: white;
+    transform: scale(1.05);
+    filter: brightness(80%);
+    border: black solid;
+}
+
+.locked {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#skill1 {
+    position: absolute;
+    bottom: 80%;
+    left: 45%;
+    background-image: url(skill1.png);
+    background-size: cover;
+}
+
+#skill2 {
+    position: absolute;
+    bottom: 70%;
+    left: 30%;
+    background-image: url(skill2.png);
+    background-size: cover;
+}
+
+#skill3 {
+    position: absolute;
+    bottom: 55%;
+    left: 45%;
+    background-image: url(skill3.png);
+    background-size: cover;
+}
+
+#skill4 {
+    position: absolute;
+    bottom: 70%;
+    left: 60%;
+    background-image: url(skill4.png);
+    background-size: cover;
+}
+
+#skill5 {
+    position: absolute;
+    bottom: 75%;
+    left: 15%;
+    background-image: url(skill5.png);
+    background-size: cover;
+}
+
+#skill6 {
+    position: absolute;
+    bottom: 52%;
+    left: 21%;
+    background-image: url(skill6.png);
+    background-size: cover;
+}
+
+#skill7 {
+    position: absolute;
+    bottom: 37%;
+    left: 32%;
+    background-image: url(skill7.png);
+    background-size: cover;
+}
+
+#skill8 {
+    position: absolute;
+    bottom: 30%;
+    left: 45%;
+    background-image: url(skill8.png);
+    background-size: cover;
+}
+
+#skill9 {
+    position: absolute;
+    bottom: 37%;
+    left: 58%;
+    background-image: url(skill9.png);
+    background-size: cover;
+}
+
+#skill10 {
+    position: absolute;
+    bottom: 52%;
+    left: 69%;
+    background-image: url(skill10.png);
+    background-size: cover;
+}
+
+#skill11 {
+    position: absolute;
+    bottom: 75%;
+    left: 75%;
+    background-image: url(skill11.png);
+    background-size: cover;
+}
+
+#skill12 {
+    position: absolute;
+    bottom: 41%;
+    left: 8%;
+    background-image: url(skill12.png);
+    background-size: cover;
+}
+
+#skill13 {
+    position: absolute;
+    bottom: 28%;
+    left: 20%;
+    background-image: url(skill13.png);
+    background-size: cover;
+}
+
+#skill14 {
+    position: absolute;
+    bottom: 10%;
+    left: 31%;
+    background-image: url(skill14.png);
+    background-size: cover;
+}
+
+#skill15 {
+    position: absolute;
+    bottom: 4%;
+    left: 45%;
+    background-image: url(skill15.png);
+    background-size: cover;
+}
+
+#skill16 {
+    position: absolute;
+    bottom: 10%;
+    left: 59%;
+    background-image: url(skill16.png);
+    background-size: cover;
+}
+
+#skill17 {
+    position: absolute;
+    bottom: 28%;
+    left: 70%;
+    background-image: url(skill17.png);
+    background-size: cover;
+}
+
+#skill18 {
+    position: absolute;
+    bottom: 41%;
+    left: 82%;
+    background-image: url(skill18.png);
+    background-size: cover;
+}
+
+#skill19 {
+    position: absolute;
+    bottom: 5%;
+    left: 8%;
+    background-image: url(skill19.png);
+    background-size: cover;
+}
+
+#skill20 {
+    position: absolute;
+    bottom: 5%;
+    left: 82%;
+    background-image: url(skill20.png);
+    background-size: cover;
+}
+
+.bought {
+    border: black solid;
+    filter: grayscale(100%);
+    background-color: gray;
+}
+
+#toggleDoubleButton {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    background-color: gold;
+}
+
+#toggleDoubleButton:hover {
+    background-color: darkgoldenrod;
+}
+
+#toggleAutoButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+}
+
+#toggleAutoButton:hover {
+    background-color: darkred;
+}
+
+#weatherDisplay {
+    position: absolute;
+    top: 153px;
+    left: 10px;
+    background-color: lightblue;
+    width: 110px;
+    font-size: 19px;
+}
+
+#multiplierDisplay {
+    position: absolute;
+    top: 2px;
+    left: 18px;
+    background-color: goldenrod;
+    pointer-events: none;
+}
+
+#sellAllButton {
+    position: absolute;
+    top: 5px;
+    left: 300px;
+    background-color: red;
+}
+
+#sellAllButton:hover {
+    background-color: darkred;
+}
+
+#rebirthButton {
+    position: absolute;
+    top: 5px;
+    left: 150px;
+    background-color: deeppink;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}
+
+#rebirthButton:hover {
+    background-color: #800080;
+}
+
+.skill-box {
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    border: 3px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 10px;
+    color: white;
+}
+
+.skill-box-extra {
+    width: 300px;
+    height: 100px;
+    background-color: black;
+    border: 3px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 10px;
+    color: white;
+}
+
+#Jukseknapp{
+    opacity: 0%;
+    position: absolute;
+    width:25px;
+    height:50px;
+    top:0.1px;
+    left:420px;
+}

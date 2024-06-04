@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetable Farm</title>
+    <link rel="icon" type="image/x-icon" href="TabPic.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+
+<body>
+    <div class="container">
+        <button class="skill-tree-button" onclick="toggleSkillTreeMenu()">Skill tree</button>
+
+        <div id="skillTreeOverlay" class="overlay"></div>
+
+        <div id="skillTreeMenu" class="skill-tree-menu" style="display: none;">
+            <button id="closeSkillTreeButton" class="close-skill-tree-button" onclick="closeSkillTree()">Lukk Skill
+                Tree</button>
+            <div class="skill-buttons-container">
+                <button id="skill1" class="skill-button" onclick="buySkill(1)" onmouseover="showBox1()"
+                    onmouseout="hideBox1()">Trillebår</button>
+                <button id="skill2" class="skill-button locked" onclick="buySkill(2)" onmouseover="showBox2()"
+                    onmouseout="hideBox2()">Reklame</button>
+                <button id="skill3" class="skill-button locked" onclick="buySkill(3)" onmouseover="showBox3()"
+                    onmouseout="hideBox3()">Jalapenos</button>
+                <button id="skill4" class="skill-button locked" onclick="buySkill(4)" onmouseover="showBox4()"
+                    onmouseout="hideBox4()">Bonde</button>
+                <button id="skill5" class="skill-button locked" onclick="buySkill(5)" onmouseover="showBox5()"
+                    onmouseout="hideBox5()">Kokain</button>
+                <button id="skill6" class="skill-button locked" onclick="buySkill(6)" onmouseover="showBox6()"
+                    onmouseout="hideBox6()">Sosiale medier</button>
+                <button id="skill7" class="skill-button locked" onclick="buySkill(7)" onmouseover="showBox7()"
+                    onmouseout="hideBox7()">Vann</button>
+                <button id="skill8" class="skill-button locked" onclick="buySkill(8)" onmouseover="showBox8()"
+                    onmouseout="hideBox8()">Jalapenos 2.0</button>
+                <button id="skill9" class="skill-button locked" onclick="buySkill(9)" onmouseover="showBox9()"
+                    onmouseout="hideBox9()">Ekstra Energi</button>
+                <button id="skill10" class="skill-button locked" onclick="buySkill(10)" onmouseover="showBox10()"
+                    onmouseout="hideBox10()">Motivasjon</button>
+                <button id="skill11" class="skill-button locked" onclick="buySkill(11)" onmouseover="showBox11()"
+                    onmouseout="hideBox11()">Ekstra skift</button>
+                <button id="skill12" class="skill-button locked" onclick="buySkill(12)" onmouseover="showBox12()"
+                    onmouseout="hideBox12()">TV-serie</button>
+                <button id="skill13" class="skill-button locked" onclick="buySkill(13)" onmouseover="showBox13()"
+                    onmouseout="hideBox13()">Mineralvann</button>
+                <button id="skill14" class="skill-button locked" onclick="buySkill(14)" onmouseover="showBox14()"
+                    onmouseout="hideBox14()">Vær</button>
+                <button id="skill15" class="skill-button locked" onclick="buySkill(15)" onmouseover="showBox15()"
+                    onmouseout="hideBox15()">24t skift</button>
+                <button id="skill16" class="skill-button locked" onclick="buySkill(16)" onmouseover="showBox16()"
+                    onmouseout="hideBox16()">God start</button>
+                <button id="skill17" class="skill-button locked" onclick="buySkill(17)" onmouseover="showBox17()"
+                    onmouseout="hideBox17()">Hotkey</button>
+                <button id="skill18" class="skill-button locked" onclick="buySkill(18)" onmouseover="showBox18()"
+                    onmouseout="hideBox18()">Lønn</button>
+                <button id="skill19" class="skill-button locked" onclick="buySkill(19)" onmouseover="showBox19()"
+                    onmouseout="hideBox19()"></button>
+                <button id="skill20" class="skill-button locked" onclick="buySkill(20)" onmouseover="showBox20()"
+                    onmouseout="hideBox20()">Super Arbeidere</button>
+                <div id="skillBoxes">
+                    <div id="box1" class="skill-box" hidden>
+                        <p>Pris: 25k Bomull</p>
+                        <hr>
+                        <p>5% sjanse for dobbel høsting</p>
+                    </div>
+                    <div id="box2" class="skill-box" hidden>
+                        <p>Pris: 20k Poteter</p>
+                        <hr>
+                        <p>Alt selger for 10% mer</p>
+                    </div>
+                    <div id="box3" class="skill-box" hidden>
+                        <p>Pris: 200k Gulrøtter</p>
+                        <hr>
+                        <p>Lås opp de ultra sjeldne Jalapenos, 1/1000 sjanse for dem</p>
+                    </div>
+                    <div id="box4" class="skill-box" hidden>
+                        <p>Pris: 150k Bomull</p>
+                        <hr>
+                        <p>Lås opp en bonde som automatisk plukker for deg</p>
+                    </div>
+                    <div id="box5" class="skill-box" hidden>
+                        <p>Pris: 80k Asparges</p>
+                        <hr>
+                        <p>10% sjanse for å ikke bruke energi</p>
+                    </div>
+                    <div id="box6" class="skill-box" hidden>
+                        <p>Pris: 100k Poteter</p>
+                        <hr>
+                        <p>Alt selger for 15% mer</p>
+                    </div>
+                    <div id="box7" class="skill-box" hidden>
+                        <p>Pris: 1 Jalapeno</p>
+                        <hr>
+                        <p>Regenerer 2% energi per sekund</p>
+                    </div>
+                    <div id="box8" class="skill-box" hidden>
+                        <p>Pris: 200k Brokkoli</p>
+                        <hr>
+                        <p>Øker sjansen for jalapenos til 1/500</p>
+                    </div>
+                    <div id="box9" class="skill-box" hidden>
+                        <p>Pris: 1 Jalapeno</p>
+                        <hr>
+                        <p>Dobble Energikapasiteten</p>
+                    </div>
+                    <div id="box10" class="skill-box" hidden>
+                        <p>Pris: 1M Gulrøtter</p>
+                        <hr>
+                        <p>Du får 15% mer grønnsaker</p>
+                    </div>
+                    <div id="box11" class="skill-box" hidden>
+                        <p>Pris: 500k Epler</p>
+                        <hr>
+                        <p>Bonden får arbeiderne til å jobbe for seg</p>
+                    </div>
+                    <div id="box12" class="skill-box" hidden>
+                        <p>Pris: 200k Asparges</p>
+                        <hr>
+                        <p>Alt selger for 20% mer</p>
+                    </div>
+                    <div id="box13" class="skill-box" hidden>
+                        <p>Pris: 5 Jalapenos</p>
+                        <hr>
+                        <p>Regenerer 10% energi per sekund</p>
+                    </div>
+                    <div id="box14" class="skill-box-extra" hidden>
+                        <p>Pris: 400k Aubergine</p>
+                        <hr>
+                        <p>Låser opp været</p>
+                    </div>
+                    <div id="box15" class="skill-box-extra" hidden>
+                        <p>Pris: 500k Jordbær</p>
+                        <hr>
+                        <p>Dobbel produksjon, men dobbel energi</p>
+                    </div>
+                    <div id="box16" class="skill-box-extra" hidden>
+                        <p>Pris: 750k Epler</p>
+                        <hr>
+                        <p>Den første grønnsaken du plukker når du har full energi gir 4x mengde </p>
+                    </div>
+                    <div id="box17" class="skill-box" hidden>
+                        <p>Pris: 10 Jalapenos</p>
+                        <hr>
+                        <p>Legger til en hotkey, som lar deg hvile (Space)</p>
+                    </div>
+                    <div id="box18" class="skill-box" hidden>
+                        <p>Pris: 10M Gulrøtter</p>
+                        <hr>
+                        <p>Du får 25% mer grønnsaker</p>
+                    </div>
+                    <div id="box19" class="skill-box" hidden>
+                        <p>Pris: 7,5M Sukkererter</p>
+                        <hr>
+                        <p>Alle oppgraderinger og arbeidere koster 50% mindre</p>
+                    </div>
+                    <div id="box20" class="skill-box" hidden>
+                        <p>Pris: 10M Bomull</p>
+                        <hr>
+                        <p>Alt blir 25% bedre</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div id="buffMenu" class="buff-menu" style="display: none;">
+            <button id="closeBuffMenuButton" class="close-buff-menu-button" onclick="closeBuffMenu()">Lukk Menyen</button>
+            <div id="upgrades"></div>
+            <div class="SkillDescriptions" id="skill1desc">
+                <p>Description Skill1</p>
+            </div>
+            <div class="SkillDescriptions" id="skill2desc">
+                <p>Description Skill2</p>
+            </div>
+            <div class="SkillDescriptions" id="skill3desc">
+                <p>Description Skill3</p>
+            </div>
+            <div class="SkillDescriptions" id="skill4desc">
+                <p>Description Skill4</p>
+            </div>
+            <div class="SkillDescriptions" id="skill5desc">
+                <p>Description Skill5</p>
+            </div>
+            <div class="SkillDescriptions" id="skill6desc">
+                <p>Description Skill6</p>
+            </div>
+            <div class="SkillDescriptions" id="skill7desc">
+                <p>Description Skill7</p>
+            </div>
+            <div class="SkillDescriptions" id="skill8desc">
+                <p>Description Skill8</p>
+            </div>
+            <div class="SkillDescriptions" id="skill9desc">
+                <p>Description Skill9</p>
+            </div>
+            <div class="SkillDescriptions" id="skill10desc">
+                <p>Description Skill10</p>
+            </div>
+            <div class="SkillDescriptions" id="skill11desc">
+                <p>Description Skill11</p>
+            </div>
+            <div class="SkillDescriptions" id="skill12desc">
+                <p>Description skill12</p>
+            </div>
+            <div class="SkillDescriptions" id="skill13desc">
+                <p>Description skill13</p>
+            </div>
+            <div class="SkillDescriptions" id="skill14desc">
+                <p>Description skill14</p>
+            </div>
+            <div class="SkillDescriptions" id="skill15desc">
+                <p>Description skill15</p>
+            </div>
+            <div class="SkillDescriptions" id="skill16desc">
+                <p>Description skill16</p>
+            </div>
+            <div class="SkillDescriptions" id="skill17desc">
+                <p>Description Skill17</p>
+            </div>
+            <div class="SkillDescriptions" id="skill18desc">
+                <p>Description Skill8</p>
+            </div>
+            <div class="SkillDescriptions" id="skill19desc">
+                <p>Description Skill19</p>
+            </div>
+            <div class="SkillDescriptions" id="skill20desc">
+                <p>Description Skill20</p>
+            </div>
+
+        </div>
+        
+
+
+
+        <h1 id="Header">Gårdssimulator</h1>
+        <div id="vegetableButtons" class="vegetable-buttons"></div>
+        <div class="bottom-container">
+            <div class="left-container">
+                <div id="status" class="status"></div>
+                <div id="crops" class="crops"></div>
+            </div>
+            <div class="middle-container">
+                <div id="moneyDisplay" class="money-display">$0</div>
+                <div id="energyDisplay"></div>
+            </div>
+            <div class="right-container">
+                <div class="button-group">
+                    <button id="restButton" class="rest-button" onclick="rest()">Hvil</button>
+                    <button id="workerUpgradeButton" class="buy-worker-button" onclick="buyWorker()">Kjøp
+                        Arbeider</button>
+                    <button id="energyUpgradeButton" class="energy-upgrade-button" onclick="buyEnergyUpgrade()">Kjøp
+                        energioppgradering</button>
+                    <button id="energyReductionButton" class="energy-reduction-button"
+                        onclick="buyEnergyReductionUpgrade()">Reduser energiforbruk</button>
+                    <button id="sellAllButton" onclick="sellAllVegetables()">Selg Alt</button>
+                    <button id="toggleDoubleButton" hidden>Dobbel Høsting: Av</button>
+                    <button id="toggleAutoButton" hidden>Bonde: Av</button>
+                    <button id="rebirthButton" onclick="rebirth()">Rebirth</button>
+                    <div id="multiplierDisplay">Multiplier: x<span id="currentMultiplier">1</span></div>
+                    <div id="weatherDisplay"></div>
+                    <button id="Jukseknapp" onclick="getCotton()"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
